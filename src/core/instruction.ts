@@ -1,4 +1,4 @@
-import { decodeRInstruction, RInstruction } from "../decoder/decode_r";
+import { RInstruction } from "../decoder/decode_r";
 
 export enum InstructionType {
   R = "R",
@@ -14,20 +14,10 @@ export interface Instruction {
   instructionType: InstructionType
 }
 
+export const parseInstruction = (instruction: string): number => {
+  return parseInt(instruction, 16)
+}
+
 export const extractOpcode = (instruction: number) => {
   return instruction & 0x7F
-}
-
-export const opcodeToDecoder = {
-  0x33: decodeRInstruction,
-}
-
-export const parseInstruction = (instruction: string): number => {
-  const instructionArray = instruction.split(" ")
-  const parsedInstruction = parseInt(instructionArray[0] ?? "0", 16) |
-    parseInt(instructionArray[1] ?? "0", 16) << 8 |
-    parseInt(instructionArray[2] ?? "0", 16) << 16 |
-    parseInt(instructionArray[3] ?? "0", 16) << 24
-  if (instructionArray.length !== 4) throw new Error(`Invalid instruction. Instruction: ${instruction}`)
-  return parsedInstruction
 }
