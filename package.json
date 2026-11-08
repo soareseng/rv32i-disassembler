@@ -1,0 +1,25 @@
+{
+  "name": "rv32i-disassembler",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/soareseng/rv32i-disassembler#readme",
+  "bugs": {
+    "url": "https://github.com/soareseng/rv32i-disassembler/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soareseng/rv32i-disassembler.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}
